@@ -33,10 +33,12 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'food_shop.urls'
 
+import os
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'food_shop/templates')],  # Додаємо шлях до шаблонів
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -48,6 +50,7 @@ TEMPLATES = [
         },
     },
 ]
+
 
 WSGI_APPLICATION = 'food_shop.wsgi.application'
 
