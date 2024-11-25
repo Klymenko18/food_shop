@@ -38,8 +38,8 @@ import os
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'food_shop/templates')],  # Додаємо шлях до шаблонів
-        'APP_DIRS': True,
+        'DIRS': [BASE_DIR / 'templates'],  # Тільки одна папка для шаблонів
+        'APP_DIRS': True,  # Django все одно буде шукати шаблони в кожній апці, якщо вони там є
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
@@ -50,6 +50,11 @@ TEMPLATES = [
         },
     },
 ]
+
+
+
+
+
 
 
 WSGI_APPLICATION = 'food_shop.wsgi.application'
